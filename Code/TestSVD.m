@@ -22,14 +22,14 @@ img_diff = abs(img-img_compressed);
 err = mean(mean(img_diff));
 
 %% Plot Figures
-% figure;
-% title('Original Image');
-% imshow(img);
-% 
-% figure;
-% title('Compressed Image');
-% imshow(img_compressed);
-%
-% figure;
-% title('Difference Image');
-% imshow(img_diff);
+figure;
+title('Original Image');
+imshow(img);
+
+figure;
+title('Compressed Image');
+imshow(img_compressed);
+
+figure;
+title('Difference Image');
+imshow(img_diff,[]);
