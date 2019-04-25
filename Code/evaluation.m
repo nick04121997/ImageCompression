@@ -6,11 +6,11 @@ img = imread('../Images/classic/mandril_gray.tif');
 figure;
 title("Error plot");
 plot(nzr_vector, err_vector);
-xlabel('Compression ratio');
+xlabel('Non-zero rate');
 ylabel('Average pixel error');
 
 figure;
 title("PSNR plot");
 plot(nzr_vector, psnr_vector);
-xlabel('Compression ratio');
+xlabel('Non-zero ratio');
 ylabel('PSNR');

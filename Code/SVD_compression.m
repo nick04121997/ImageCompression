@@ -16,7 +16,7 @@ for counter = 1:min(size(S))
     err = mean(mean(img_diff));
     err_vector(counter) = err;
     psnr_vector(counter) = psnr(img_compressed,img);
-    nzr = numel(img)/(nnz(U_truncated) + nnz(V_truncated) + nnz(S_truncated));
+    nzr = (nnz(U_truncated) + nnz(V_truncated) + nnz(S_truncated))/numel(img);
     nzr_vector(counter) = nzr;
 end
 
