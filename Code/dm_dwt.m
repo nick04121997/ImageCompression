@@ -1,4 +1,4 @@
-function [XCMP,cfsCMP,dimCFS] = dm_dwt(X)
+function [XCMP,cfsCMP,dimCFS,PERF0] = dm_dwt(X)
 % FUNC_COMPRESS_DW2D Saved Compression Process.
 %   X: matrix of data
 %   -----------------
@@ -17,13 +17,13 @@ level = 4;
 %------------------------
 % meth = 'bal_sn';
 sorh = 'h';    % Specified soft or hard thresholding
-thrSettings = 92.402092057507247;
+thrSettings = 90;
 roundFLAG = true;
 
 % Compression using WDENCMP.
 %--------------------------
 [coefs,sizes] = wavedec2(X,level,wname);
-[XCMP,cfsCMP,dimCFS] = wdencmp('gbl',coefs,sizes, ...
+[XCMP,cfsCMP,dimCFS,PERF0] = wdencmp('gbl',coefs,sizes, ...
     wname,level,thrSettings,sorh,1);
 if roundFLAG , XCMP = round(XCMP); end
 if isequal(class(X),'uint8') , XCMP = uint8(XCMP); 
